@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>FASTA Sequence Translation</h1>
+  <h2>Paste one or more FASTA sequence into the text area below:</h2>
+  <p>(FASTA sequence file can be obtained from Genbank)</p>
+<br>
+  <h3>Input Example in the text area:</h3>
+  <p>>sequence1</p>
+  <p>ACGTACGTACGTACGTACGT</p>
+  <p>>sequence2</p>
+  <p>ACGUACGUACGUACGUACGU</p>
+<br>
+  <h3>WARNING! Sequence should only contain: A,C,G,T or U</h3>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <textarea rows="20" cols="100" name="inputtext" id="inputtext" required></textarea>
+    <button type="submit" class="btn btn-primary">Translate</button>
+  </form>
+  <script>
+    function myFunction() {
+      document.getElementById("inputtext").value = document.getElementById("inputtext").value.replace(/ /g,"");
+    }
+    </script>
+</body>
+</html>
