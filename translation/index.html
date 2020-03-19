@@ -3,9 +3,13 @@
   <meta charset="utf-8">
 </head>
 <body>
+  <center>
   <h1>FASTA Sequence Translation</h1>
   <h2>Paste one or more FASTA sequence into the text area below:</h2>
   <p>(FASTA sequence file can be obtained from Genbank)</p>
+  <iframe width="640" height="360"
+    src="https://www.youtube.com/embed/2TlIjPg_tIQ">
+  </iframe>
 <br>
   <h3>Input Example in the text area:</h3>
   <p>>sequence1</p>
@@ -14,15 +18,16 @@
   <p>ACGUACGUACGUACGUACGU</p>
 <br>
   <h3>WARNING! Sequence should only contain: A,C,G,T or U</h3>
-  <form method="POST" action="">
-    {% csrf_token %}
+  <form method="GET" action="{% url 'result' %}">
+    
     <textarea rows="20" cols="100" name="inputtext" id="inputtext" required></textarea>
-    <button type="submit" class="btn btn-primary">Translate</button>
+    <button type="submit" class="btn btn-primary" onclick="myFunction()">Translate</button>
   </form>
   <script>
     function myFunction() {
       document.getElementById("inputtext").value = document.getElementById("inputtext").value.replace(/ /g,"");
     }
     </script>
+  </center>
 </body>
 </html>

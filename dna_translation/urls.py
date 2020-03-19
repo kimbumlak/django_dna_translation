@@ -1,10 +1,14 @@
 from django.contrib import admin
 from django.urls import path
-from translation.views import HomeView
+from translation.views import home_view, result
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomeView.as_view()),
+    path('', home_view),
+    path('result', result, name="result")
+    #path('result', result)
+    #path('results', HomeView.as_view()),
+    #path('results', HomeView.as_view()),
 ]
 
 
