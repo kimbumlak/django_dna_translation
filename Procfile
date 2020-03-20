@@ -1,0 +1,1 @@
+web: gunicorn dna_translation.wsgi --log-file -

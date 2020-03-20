@@ -10,14 +10,14 @@
   table {
     border-collapse:collapse;
   }
+  div {
+    margin-top: -20px;
+  }
   </style>
 </head>
 <body>
 <center>
   <h1>DNA to Protein Translation Result</h1>
-  <h2>To check specific frequency of Protein in particular sequence, search protein sequence name below</h2>
-  <h3>(Protein sequence names can be found in 'Protein Sequence Name' column below)</h3>
-  <h3>Type in protein sequence name for further analysis:</h3>
   <br>
   <table>
     <tr>
@@ -33,7 +33,13 @@
     </tr>
     {% endfor %}
   </table>
-</center>
+  <br>
+  <br>
+  <h2>Graph Visualization Result</h2>
+  <div>
   <img src="data:image/png;base64, {{ image_base64 }}" alt="somealt" />
+  </div>
+</center>
+  
 </body>
 </html>

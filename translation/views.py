@@ -61,6 +61,8 @@ def result(request):
                 continue
             else:
                 for i in range(0,len(tmp)-((3+len(tmp))%3),3):
+                    if tmp[i:i+3] not in codon:
+                        return render(request, 'index.html', {'alert_flag':True})
                     sequence_line += codon[tmp[i:i+3]]
                 sequence_line = list(sequence_line)
                 chr_position = 70
@@ -80,6 +82,8 @@ def result(request):
             tmp += line
 
     for i in range(0,len(tmp)-((3+len(tmp))%3),3):
+        if tmp[i:i+3] not in codon:
+            return render(request, 'index.html', {'alert_flag':True})
         sequence_line += codon[tmp[i:i+3]]
     sequence_line = list(sequence_line)
     chr_position = 70

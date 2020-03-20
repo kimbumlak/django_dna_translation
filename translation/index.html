@@ -4,12 +4,13 @@
 </head>
 <body>
   <center>
-  <h1>FASTA Sequence Translation</h1>
-  <h2>Paste one or more FASTA sequence into the text area below:</h2>
+  <h1>Nucleotide FASTA Sequence Translation</h1>
+  <h2>Paste one or more Nuleotide FASTA sequences into the text area below to get Protein Sequences:</h2>
   <p>(FASTA sequence file can be obtained from Genbank)</p>
   <iframe width="640" height="360"
     src="https://www.youtube.com/embed/2TlIjPg_tIQ">
   </iframe>
+  <p><small>[Safa Khalid]. (2017, March 2). How to find FASTA Format from NCBI. Retrieved from https://www.youtube.com/watch?v=2TlIjPg_tIQ</small></p>
 <br>
   <h3>Input Example in the text area:</h3>
   <p>>sequence1</p>
@@ -17,12 +18,15 @@
   <p>>sequence2</p>
   <p>ACGUACGUACGUACGUACGU</p>
 <br>
-  <h3>WARNING! Sequence should only contain: A,C,G,T or U</h3>
+  <h3>WARNING! Sequence should only contain Nucleotide Bases (A,C,G,T or U)</h3>
   <form method="GET" action="{% url 'result' %}">
     
     <textarea rows="20" cols="100" name="inputtext" id="inputtext" required></textarea>
     <button type="submit" class="btn btn-primary" onclick="myFunction()">Translate</button>
   </form>
+  {% if alert_flag %}
+    <script>alert("Sequence contains Non-Nucleotide Bases! Must ONLY contain A,C,G,T or U")</script>
+  {% endif %}
   <script>
     function myFunction() {
       document.getElementById("inputtext").value = document.getElementById("inputtext").value.replace(/ /g,"");

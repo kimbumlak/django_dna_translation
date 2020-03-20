@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#-_zhb$upluqk)q$&j46s^w0qkba1bqo2$-94irk@g+yem5-bt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dna-translation.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
